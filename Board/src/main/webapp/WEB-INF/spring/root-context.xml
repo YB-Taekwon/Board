@@ -25,12 +25,22 @@
 		<constructor-arg ref="hikariConfig" />
 	</bean>
 
-	<mybatis-spring:scan base-package="com.board.mapper" />
-	<context:component-scan base-package="com.board.model"></context:component-scan>
-	<context:component-scan base-package="com.board.service"></context:component-scan>
+	<mybatis-spring:scan
+		base-package="com.board.mapper" />
+	<context:component-scan
+		base-package="com.board.model"></context:component-scan>
+	<context:component-scan
+		base-package="com.board.service"></context:component-scan>
 
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
+		<property name="configuration">
+			<bean class="org.apache.ibatis.session.Configuration">
+				<property name="mapUnderscoreToCamelCase" value="true" />
+			</bean>
+		</property>
+		<property name="mapperLocations"
+			value="classpath:/com/board/mapper/*.xml" />
 	</bean>
 
 </beans>

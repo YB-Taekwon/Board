@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.board.mapper.BoardMapper">
+	<insert id="insertBoard" parameterType="com.board.model.Board">
+		INSERT INTO BOARD (BOARD_TITLE, BOARD_CONTENT
+		<if test="boardWriter != null">, BOARD_WRITER</if>
+		)
+		VALUES (#{boardTitle}, #{boardContent}
+		<if test="boardWriter != null">, #{boardWriter}</if>
+		)
+	</insert>
+
+	<select id="selectBoardList" resultType="com.board.model.Board">
+		SELECT * FROM BOARD
+	</select>
+	
+	<select id="selectBoard" parameterType="java.lang.Long" resultType="com.board.model.Board">
+		SELECT * FROM BOARD WHERE BOARD_ID = #{boardId}
+	</select>
+</mapper>

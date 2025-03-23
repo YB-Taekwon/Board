@@ -3,13 +3,13 @@
 
 <html>
 <head>
-    <title>HOME</title>
+    <title>Post</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<h1>홈 화면</h1>
+<h1>게시글 - ${post.boardId }</h1>
 <div>
     <a href="/">홈</a>
     <span>|</span>
@@ -18,21 +18,34 @@
 
 <div class="table-container">
     <table>
-        <thead>
+        <tr>
+            <th>조회수</th>
+            <td>${post.boardCount}</td>
+        </tr>
         <tr>
             <th>게시글 번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>조회수</th>
-            <th>작성 일자</th>
-            <th>수정 일자</th>
+            <td>${post.boardId}</td>
         </tr>
-        </thead>
-        <tbody>
         <tr>
-            <td colspan="6">게시글이 존재하지 않습니다.</td>
+            <th>제목</th>
+            <td>${post.boardTitle}</td>
         </tr>
-        </tbody>
+        <tr>
+            <th>내용</th>
+            <td>${post.boardContent}</td>
+        </tr>
+        <tr>
+            <th>작성자</th>
+            <td>${post.boardWriter}</td>
+        </tr>
+        <tr>
+            <th>작성 일자</th>
+            <td>${post.boardRegistDate}</td>
+        </tr>
+        <tr>
+            <th>수정 일자</th>
+            <td>${post.boardUpdateDate}</td>
+        </tr>
     </table>
 </div>
 </body>
