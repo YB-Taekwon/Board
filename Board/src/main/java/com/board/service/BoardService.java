@@ -13,4 +13,6 @@ public interface BoardService {
 	Board getPost(Long boardId);
 	// 게시글 수정
 	void modifyPost(Board board);
+	// 게시글 삭제
+	void deletePost(Long boardId);
 }

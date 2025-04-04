@@ -15,4 +15,6 @@ public interface BoardMapper {
 	Board selectBoard(Long boardId);
 	// 게시글 수정
 	void updateBoard(Board board);
+	// 게시글 삭제
+	void deleteBoard(Long boardId);
 }

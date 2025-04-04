@@ -52,6 +52,12 @@
 							value="${post.boardId}">수정</button>
 					</form>
 				<td>
+				<td>
+					<form action="/delete-post" method="post">
+						<button class="cell-button" type="submit" name="boardId"
+							value="${post.boardId}">삭제</button>
+					</form>
+				<td>
 			</tr>
 		</table>
 	</div>

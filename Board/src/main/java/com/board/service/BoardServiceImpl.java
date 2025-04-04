@@ -38,6 +38,13 @@ public class BoardServiceImpl implements BoardService {
 		boardMapper.updateBoard(board);
 		
 	}
+
+	// 게시글 삭제
+	@Override
+	public void deletePost(Long boardId) {
+		boardMapper.deleteBoard(boardId);
+		
+	}
 	
 	
 

@@ -23,4 +23,8 @@
 		SET BOARD_TITLE = #{boardTitle}, BOARD_CONTENT = #{boardContent}
 		WHERE BOARD_ID = #{boardId}
 	</update>
+	
+	<delete id="deleteBoard" parameterType="java.lang.Long">
+		DELETE FROM BOARD WHERE BOARD_ID = #{boardId}
+	</delete>
 </mapper>

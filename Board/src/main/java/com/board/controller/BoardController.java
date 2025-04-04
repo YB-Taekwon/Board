@@ -72,4 +72,12 @@ public class BoardController {
 		boardService.modifyPost(board);
 		return "redirect:/";
 	}
+	
+	
+	// 글 삭제
+	@PostMapping("/delete-post")
+	public String deletePost(Long boardId) {
+		boardService.deletePost(boardId);
+		return "redirect:/";
+	}
 }
