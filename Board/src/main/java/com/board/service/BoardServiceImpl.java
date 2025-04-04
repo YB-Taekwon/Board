@@ -31,6 +31,13 @@ public class BoardServiceImpl implements BoardService {
 	public Board getPost(Long boardId) {
 		return boardMapper.selectBoard(boardId);
 	}
+
+	// 게시글 수정
+	@Override
+	public void modifyPost(Board board) {
+		boardMapper.updateBoard(board);
+		
+	}
 	
 	
 

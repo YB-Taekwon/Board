@@ -11,4 +11,6 @@ public interface BoardService {
 	ArrayList<Board> getPostList();
 	// 게시글 상세 조회
 	Board getPost(Long boardId);
+	// 게시글 수정
+	void modifyPost(Board board);
 }

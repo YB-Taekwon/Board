@@ -22,20 +22,13 @@ public class BoardController {
 	BoardService boardService;
 	
 	
-	// 홈 화면
-	@GetMapping
-	public String postList() {
-		return "index";
-	}
-	
-	
 	// 전체 게시글 목록
-	@GetMapping("/post-list")
+	@GetMapping
 	public String getPostList(Model model) {
 		ArrayList<Board> posts = boardService.getPostList();
 		model.addAttribute("posts", posts);
 		
-		return "post-list";
+		return "index";
 	}
 	
 	
@@ -61,5 +54,22 @@ public class BoardController {
 	public String writePost(Board board) {
 		boardService.writePost(board);
 		return "redirect:/post-list";
+	}
+	
+	
+	// 글 수정 화면
+	@GetMapping("/modify-post")
+	public String modifyPostForm(Long boardId, Model model) {
+		Board post = boardService.getPost(boardId);
+		model.addAttribute("post", post);
+		return "modify-post-form";
+	}
+	
+	
+	// 글 수정
+	@PostMapping("/modify-post")
+	public String modifyPost(Board board) {
+		boardService.modifyPost(board);
+		return "redirect:/";
 	}
 }

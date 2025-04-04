@@ -17,4 +17,10 @@
 	<select id="selectBoard" parameterType="java.lang.Long" resultType="com.board.model.Board">
 		SELECT * FROM BOARD WHERE BOARD_ID = #{boardId}
 	</select>
+	
+	<update id="updateBoard" parameterType="com.board.model.Board">
+		UPDATE BOARD
+		SET BOARD_TITLE = #{boardTitle}, BOARD_CONTENT = #{boardContent}
+		WHERE BOARD_ID = #{boardId}
+	</update>
 </mapper>

@@ -13,4 +13,6 @@ public interface BoardMapper {
 	ArrayList<Board> selectBoardList();
 	// 게시글 상세 조회
 	Board selectBoard(Long boardId);
+	// 게시글 수정
+	void updateBoard(Board board);
 }

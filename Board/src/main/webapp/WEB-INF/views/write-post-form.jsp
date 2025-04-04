@@ -43,7 +43,7 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    <button type="submit">작성</button>
+                    <button class="cell-button" type="submit">작성</button>
                 </td>
             </tr>
         </table>
